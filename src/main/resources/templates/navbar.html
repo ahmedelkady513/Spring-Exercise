@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav th:fragment="navbar" class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Spring Exercise</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${module == 'department' ? 'active' : ''}" aria-current="page" th:href="@{/department}">Department</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/employee}">Employee</a>
+                </li>
+            </ul>
+            <form class="d-flex col-lg-3" th:action="@{/employee/search}" method="get" role="search">
+                <input class="form-control me-2" type="text" name="employeeName" th:value="${employeeName}" placeholder="Search By Employee Name..." aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+</body>
+</html>
