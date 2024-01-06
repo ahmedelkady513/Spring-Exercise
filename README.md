@@ -8,7 +8,7 @@ This application is a simple Spring Boot project demonstrating CRUD operations f
 
 - JDK 21
 - Maven 3.2+
-- Mysql Database
+- Mysql Database database username = springexercise and password = 123456 (Create User Or Change it in application.properties)
 
 ## Getting Started
 
